@@ -1,0 +1,37 @@
+//I cannot get this code to work and i am not sure why but i know it has to do with my looping struture
+#include <stdio.h>
+int main(){
+//This will get the input from the user that they want to use if its 0 or 1 it skips the loop ending the program
+int score;
+printf("Please enter 0 or 1 to stop \n");
+printf("Please enter the nfl number: \n");
+scanf("%d, &score");
+//Only enters if the score entered was above 2
+while(score > 2){
+    //This will start at 0 and go increase by one and can go as high as the score/ points * amount done
+    //In other words if the score is 25 you can only have 3 sets of 7 anymore and your over 25 so the for loop ends
+    for (int i = 0; i <= score / 8; i++){
+        //I then take that number and subtract it from what the new score would be
+        //The first time around its 0 so it dosnt change the score but if it was one touch down the new score would be 25-7=18 
+        //This continues with the exact same pattern till it gets to the lowest denomination of points
+    int total_i = score - i * 8;
+    for (int j = 0; j <= total_i / 7; j++){
+        int total_i_j = total_i - j * 7;
+        for(int k = 0; k <= total_i_j / 6; k++){
+            int total_i_j_k = total_i_j - k * 6;
+            for(int l = 0; l <= total_i_j_k / 3; l++){
+                int total_i_j_k_l = total_i_j_k - l * 3;
+                for(int m= 0; m <= total_i_j_k_l / 2; m++){
+                    //Once it gets here it stores the last amount of score needed and will print what the values are
+                    int total_i_j_k_l_m = total_i_j_k_l - m * 2;
+                    printf("%d TD- with Conversion %d TD- Field Goal %d TD %d FD %d Safty \n", i,j,k,l,m);
+                }
+            }
+        }
+    }
+}
+printf("Please enter 0 or 1 to stop \n");
+printf("Please enter the nfl number: \n");
+scanf("%d, &score");
+}
+}
